@@ -1,6 +1,9 @@
 # Dependencies
 /node_modules
 
+#visual studio files
+.vs/
+
 # Production
 /build
 
