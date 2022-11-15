@@ -40,12 +40,15 @@ Pour cette webapi, il sera contrôlé que:
 * la famille est obligatoire
 * la vignette est obligatoire et doit être inférieure à 8192 caractères
 
-Toute tentative d'appel de cette web api echouera et retournera un code d'erreur
+:::info Information  
+Toute tentative d'appel avec des données non conformes ou des droits insuffisants échouera et retournera un code d'erreur
+:::
 
 
 ### Optimliser les appels des web api.
 Afin que l'application soit la plus fluide possible et soit le moins sujette possible à des éventuels problèmes réseaux,
-il est judicieux d'optimliser les appels aux web api.
+il est judicieux d'optimiser les appels aux web api.
+
 Prenons en exemple d'applications qui va gérer une liste de tâches à faire.
 Lors du lancement elle va appeler la web api permettant de retrouver la liste de toutes les tâches à faire pour l'utilisateur connecté et elle
 va mettre cette liste en mémoire.
@@ -55,7 +58,24 @@ Lorsqu'un utilisateur veut rajouter une tâche l'application va:
 * et invoquer la web api d'ajout d'une tâche.
 
 Si le status de cet appel est un succès l'application pourrait par facilité demander à nouveau la liste de toutes les taches et la mettre en mémoire.
-Cela va charger inutilement l'application d'une part et va la ralentir de par cet appel inutile.
+Cela va charger inutilement l'application d'une part et risque de la ralentir d'autre part.
+
 Au lieu de cela, elle peut et doit exploiter les données reçues en retour de cet appel et directement insérer la nouvelle tâche dans sa liste des tâches en mémoire.
 Pour l'utilisateur cela aura la même conséquence mais l'application sera beacoup plus réactive.
 Il en est de même pour les opérations de suppression et de modification.
+
+### Sécuriser ses applications.
+Si les applications développées sont des applications mobiles, il convient d'assurer une sécurité maximale des secrets 
+dont l'application a besoin pour fonctionner.
+Pour rappel les principaux secrets nécessaires à BeSwarm sont:
+* l'application id
+* le secret
+* le code_challenge
+
+L'application pourra en avoir d'autres.
+Il est donc important de les stocker de manière sécurisée.
+Il faut garder à l'esprit que quiconque aura accès aux executables de l'application et si besoin analysera le code ainsi que
+les chaines de caractères.
+
+Il semble donc primordial de protéger l'application avec les outils disponsibles en fonction de la technologie utilisée.
+Si par exemple l'application est développée en .NET il faudra obligatoirement obfusquer le code afin de le rendre illisible.

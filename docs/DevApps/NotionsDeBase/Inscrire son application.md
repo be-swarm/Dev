@@ -24,7 +24,9 @@ Cela est détaillé dans la section [Authentification](/docs/DevApps/NotionsDeBa
 ![Creeapp2](img/creeapp2.png)
 
 ## L'onglet accès aux données
-Il permet de spécfifier les types de données que l'application souhaite manipuler.
+![Creeapp3](img/creeapp3.png)
+
+Il permet de spécifier les types de données que l'application souhaite manipuler.
 L'application doit explicitement ajouter les types de données qu'elle souhaite manipuler ainsi que les types d'accès qu'elle souhaite avoir.
 Il y a 3 types d'accès possibles :
 * Lecture 
@@ -35,16 +37,13 @@ Pour ces trois types elle doit spécifier si elle le requiert, le souhaite ou ne
 La différence entre les trois notion est gérée comme cela:
 Si l'application requiert l'accès à un type de données, elle ne pourra pas fonctionner sans.
 Si l'application souhaite l'accès à un type de données, elle pourra fonctionner sans mais elle ne pourra pas accéder à ces données.
-Si l'application n'utilise pas un type de données, elle ne pourra pas accéder à ces données.
 
 Ces informations sont utilisées par l'utilisateur pour décider si il souhaite ou pas donner accès à ces données à l'application au moment de l'authentification.
 
-Nota: Si l'utilisateur n'autorise pas un accès requis par l'application, l'utilisateur ne sera pas authentifié auprès de cette application.
-
-Exemple de demande d'accès
-![Creeapp3](img/creeapp3.png)
-L'application demande obligatoirement un accès en lecture sur les documents de l'utilisateur avec éventuellement un accès en écriture et ne
-prévoit pas de suppression de documents.
+:::info Information  
+L'utilisateur soit accepter (ou pas) les autorisations demandées par l'application lors de la première connexion à l'application uniquement.
+Si l'utilisateur n'autorise pas un accès requis par l'application, l'utilisateur ne sera pas authentifié auprès de cette application.
+:::
 
 
 Les deux derniers onglets permettent de définir mes modalités d'abonnement à l'application ainsi qu'un bref descriptif de l'application.
@@ -57,5 +56,7 @@ le catalogue des applications.
 
 #### Enregistrer et publier
 Enregistre l'application et la publie dans le catalogue des applications.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NXF0ep5QtoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 

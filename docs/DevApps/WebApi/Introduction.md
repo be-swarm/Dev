@@ -10,7 +10,7 @@ Ces web api sont classées par type de données manipulées.
 
 La liste exhaustive de ces web api est accessible via l'interface utilisateur swagger
 
-https://dev.user.beswarm.net/common/swagger/index.html
+https://dev.beswarm.net/common/swagger/index.html
 
 Toutes les web api sont sécurisées par un token d'authentification.
 
@@ -38,3 +38,5 @@ Dès lors un jeton est généré il suffit de le copier et de l'utiliser depuis 
 Aller sur la section web api à tester puis cliquer sur le bouton Authorize et coller le jeton dans le champ.
 Dès lors il est possible de tester les webapi.
 ![Authorize](img/authorize.png)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/abiIUHf7ujM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

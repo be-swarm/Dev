@@ -6,8 +6,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Be Swarm',
-  tagline: 'Under construction',
+    title: 'Be Swarm',
+
+    
+  tagline: 'Toutes les ressources pour bien comprende et utiliser la plateforme BeSwarm',
     url: 'https://github.com/',
     baseUrl: '/Dev/',
     onBrokenLinks: 'throw',
@@ -27,7 +29,6 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
@@ -58,66 +59,45 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Accueil',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Accueil',
+          src: 'img/logo-beswarm.png',
         },
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Tutoriels',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          {to: '/blog', label: 'Blog', position: 'left'}
+          
         ],
       },
       footer: {
         style: 'dark',
         links: [
+         
           {
-            title: 'Docs',
+            title: 'Communauté',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Slack',
+                    href: 'https://beswarm-group.slack.com',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/be-swarm',
-              },
+                  href: 'https://twitter.com/swarm_be',
+                },
+                {
+                    label: 'Linkedin',
+                    href: 'https://www.linkedin.com/company/be-swarm/?viewAsMember=true',
+                },
+                {
+                    label: 'GitHub',
+                    href: 'https://github.com/be-swarm',
+                },
             ],
           },
         ],
@@ -125,7 +105,9 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+          darkTheme: darkCodeTheme,
+          additionalLanguages: ['csharp'],
+
       },
     }),
 };
