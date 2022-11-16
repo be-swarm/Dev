@@ -2,7 +2,6 @@
 sidebar_position: 1
 ---
 
-##  Introdction
 
 Le développement d'application autour de la plateforme BeSwarm peut se faire dans tous les langages de développement.
 
