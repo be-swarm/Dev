@@ -85,6 +85,13 @@ EditForm Model="@_model" OnValidSubmit="@SubmitValidForm">
 </EditForm>
 	
 ```
+### Gestion de la langue
+Par defaut la langue courante est prise en compte.
+Il est cependant possible de spécifier une langue particulière pour la validation.
+
+```csharp
+	_validatorContext.Culture = new CultureInfo("FR");
+```
 
 ### Ajouter des Fluent Validation
 Il est possible de rajouter des validations de type fluent validation. 
