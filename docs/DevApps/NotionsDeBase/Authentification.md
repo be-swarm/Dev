@@ -32,11 +32,14 @@ L'application doit invoquer l'url d'authentification de BeSwarm en lui passant d
 * un state
 * l'identifiant de l'application
 * un code_challenge
+* l'url de rappel  (attention:l'url de rappel est sensible à la casse)
 
 Le state est une chaine aléatoire qui sera retournée à l'application afin qu'elle puisse s'assurer que l'url de rappel est bien celle que l'application
 a initié.
 Le code_challenge est une chaine aléatoire qui devra être fournie pour récupérer le jeton d'accès. Il permet de s'assurer que la demande de jeton émane bien d'une application
 qui a inité la demande d'authentification.
+L'url de rappel doit faire partie des urls configurées dans la partie oauth de l'application.
+
 
 :::info Information  
 Lors de l'appel de l'url d'authentification c'est le hash SHA256 du code_challenge qui doit être passé.
@@ -50,6 +53,7 @@ https://dev.beswarm.net/Authorize?
 state=monetat
 &appid=67859daa-76d4-4c74-a27c-d76cf7f8842e.c52de624-986a-43d5-9b9f-056823c04018.providerswarm
 &code_challenge=993439d0ad840e635cd82374dd2dc5b010d1c8a14bfc8561c5faa487e53be51d
+&callbackuri=https://mysite.com/login
 
 
 #### L'application est rappelée via son url de rappel

@@ -9,6 +9,7 @@ L'utilisation de CoreBlazorApp se fait en ajoutant le composant BeSwarmEnvironme
 ```csharp title="App.razor"
 // highlight-start
 <BeSwarmEnvironment >
+	<Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="new[] { typeof(BeSwarm.CoreBlazorApp.Pages.Login).Assembly}">
 // highlight-end
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />

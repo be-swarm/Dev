@@ -80,7 +80,7 @@ public class SecureConfig : ISecureConfig
 		public string ApplicationId { get; set; } = "....";
 		public string ClientSecret { get; set; } = "....";
 		// highlight-end
-		public string CallBackUri { get; set; } = "";
+		public string CallBackUri { get; set; } = "https://....";
 	}
 ```
 :::info Information

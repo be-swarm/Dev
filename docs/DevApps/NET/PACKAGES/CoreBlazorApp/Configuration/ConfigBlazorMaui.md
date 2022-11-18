@@ -129,7 +129,7 @@ public class SecureConfig : ISecureConfig
 		public string ApplicationId { get; set; } = "....";
 		public string ClientSecret { get; set; } = "....";
 		// highlight-end
-		public string CallBackUri { get; set; } = ""com.beswarm.testmauiblazor://";
+		public string CallBackUri { get; set; } = "com.beswarm.testmauiblazor://";
 	}
 ```
 :::info Information

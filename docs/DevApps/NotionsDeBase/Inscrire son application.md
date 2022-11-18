@@ -17,11 +17,16 @@ La création d'une application se fait depuis plusieurs onglets
 ![Creeapp1](img/creeapp1.png)
 
 ## L'onglet enregistrement oauth2
-C'est dans cet onglet que l'on définit la configuration de l'authentification avec notamment l'url de rappel ansi que
+C'est dans cet onglet que l'on définit la configuration de l'authentification avec notamment la ou les urls de rappel ansi que
 le secret permettant de s'assurer que la demande émane bien de l'application.
 Cela est détaillé dans la section [Authentification](/docs/DevApps/NotionsDeBase/Authentification).
 
 ![Creeapp2](img/creeapp2.png)
+:::info Information
+Il est possible de définir plusieurs urls de rappel. Dans ce cas, il faut les séparer par une virgule.
+Cela permet d'avoir une application disponible depuis différents environnements.
+Ex: une applicaation PWA avec son url et la même application sous android avec une url de rappel spécifique.
+:::
 
 ## L'onglet accès aux données
 ![Creeapp3](img/creeapp3.png)
