@@ -28,12 +28,40 @@ Il est à passer via le header Authorize de la requête HTTP sous la forme suiva
 ```
 Authorization: Bearer <uid_token>
 ```
+## Utiliser la liste des hosts
+Il est important de bien comprendre cette section car elle détermine comment il faut appeler les wedbapi.
 
-La liste des Hosts est la liste des services sur lesquels le jeton est utilisable.
-Typiquement ce sont les services qui gèrent l'essaim ou sont stockées les données de l'utilisateur.
+La liste qui est retournée avec le jeton est une liste générique qui contient les points d'entrée qui peuvent potentiellement
+serivr les webapi sur l'essaim de l'utilisateur.
+:::warning
+Cette liste n'est pas à utiliser directement pour invoquer les webapi car il n'y a aucune garantie que le point d'entrée serve cette webapi.
+:::
 
-L'application peut exploiter cette liste afin de faire du load balancing sur les différents services pour ses requêtes
-et/ou pour changer de service si un venait à être indisponible.
+
+Pour cela il faut invoquer la webapi api/core/v1/discovery/role sur une de ces urls. En retour il sera retourné la liste des points d'entrée qui peuvent effectievement
+servir cette webapi.
+Pour des raisons de performance, l'appllication n'a pas à invoquer systématiquement cette webapi. Elle peut le faire au démarrage en fonction des webapi qu'elle compte utiliser
+et garder cette liste pour ces futurs appels.
+
+Ex: L'application a reçu deux hosts avec son jeton 
+- https://beswarm-1.beswarm.com
+- https://beswarm-2.beswarm.com
+
+elle souhaite appeler des webapi du role api/foorder
+
+elle appelle donc https://beswarm-1.beswarm.com/api/core/v1/discovery/api/foodoffer
+En retour elle reçoit une liste qui contient https://beswarm-2.beswarm.com
+Cela veut dire que https://beswarm-1.beswarm.com n'est pas en mesure de servir cette webapi et que seule https://beswarm-2.beswarm.com doit être utilisée
+pour tous les appels à ces webapi.
+
+Elle aurait également pu invoquer https://beswarm-2.beswarm.com/api/core/v1/discovery/api/foodoffer qui aurait retourné le même résultat.
+
+
+
+L'application peut également raffraîchir la liste de urls retournées avec le jetoon avec la webapi api/core/v1/discovery
+L'appel peut être justifié si pour une raison quelconque toutes les urls qu'elle a reçu initialement se retrouvent invalides, ce qui a peu de chances d'arriver.
+
+
 
 ## Utiliser le contenu du jeton
 L'application peut utiliser le contenu du jeton afin de connaître diverses informations sur l'utilisateur.
