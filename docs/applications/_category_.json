@@ -1,0 +1,8 @@
+{
+  "label": "Les applications",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Description des applications développées par beswarm."
+  }
+}
